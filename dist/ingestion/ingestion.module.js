@@ -15,6 +15,7 @@ const meter_latest_status_entity_1 = require("./entities/meter-latest-status.ent
 const vehicle_reading_history_entity_1 = require("./entities/vehicle-reading-history.entity");
 const vehicle_latest_status_entity_1 = require("./entities/vehicle-latest-status.entity");
 const device_mapping_entity_1 = require("./entities/device-mapping.entity");
+const ingestion_controller_1 = require("./ingestion.controller");
 let IngestionModule = class IngestionModule {
 };
 exports.IngestionModule = IngestionModule;
@@ -29,6 +30,7 @@ exports.IngestionModule = IngestionModule = __decorate([
                 device_mapping_entity_1.DeviceMapping,
             ]),
         ],
+        controllers: [ingestion_controller_1.IngestionController],
         providers: [ingestion_service_1.IngestionService],
         exports: [],
     })

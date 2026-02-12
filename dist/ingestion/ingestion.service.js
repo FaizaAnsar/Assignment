@@ -37,13 +37,15 @@ let IngestionService = class IngestionService {
             meterId: data.meterId,
             kwhConsumedAc: data.kwhConsumedAc,
             voltage: data.voltage,
-            timestamp: new Date(data.timestamp),
+          timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
+
         });
         await this.meterLatestRepo.save({
             meterId: data.meterId,
             kwhConsumedAc: data.kwhConsumedAc,
             voltage: data.voltage,
-            timestamp: new Date(data.timestamp),
+          timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
+
         });
     }
     async ingestVehicle(data) {
@@ -53,7 +55,8 @@ let IngestionService = class IngestionService {
             soc: data.soc,
             voltage: data.voltage,
             temperature: data.temperature,
-            timestamp: new Date(data.timestamp),
+          timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
+
         });
         await this.vehicleLatestRepo.save({
             vehicleId: data.vehicleId,
@@ -61,7 +64,8 @@ let IngestionService = class IngestionService {
             soc: data.soc,
             voltage: data.voltage,
             temperature: data.temperature,
-            timestamp: new Date(data.timestamp),
+          timestamp: data.timestamp ? new Date(data.timestamp) : new Date(),
+
         });
     }
 };

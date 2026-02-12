@@ -6,6 +6,7 @@ import { MeterLatestStatus } from './entities/meter-latest-status.entity';
 import { VehicleReadingHistory } from './entities/vehicle-reading-history.entity';
 import { VehicleLatestStatus } from './entities/vehicle-latest-status.entity';
 import { DeviceMapping } from './entities/device-mapping.entity';
+import { IngestionController } from './ingestion.controller';
 
 @Module({
     imports: [
@@ -17,6 +18,7 @@ import { DeviceMapping } from './entities/device-mapping.entity';
             DeviceMapping,
         ]),
     ],
+    controllers: [IngestionController],
     providers: [IngestionService],
     exports: [],
 })
