@@ -1,0 +1,1 @@
+{"version":3,"file":"device-mapping.entity.js","sourceRoot":"","sources":["../../../src/ingestion/entities/device-mapping.entity.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qCAAwD;AAGjD,IAAM,aAAa,GAAnB,MAAM,aAAa;CAMzB,CAAA;AANY,sCAAa;AAEtB;IADC,IAAA,uBAAa,GAAE;;gDACE;AAGlB;IADC,IAAA,gBAAM,GAAE;;8CACO;wBALP,aAAa;IADzB,IAAA,gBAAM,EAAC,gBAAgB,CAAC;GACZ,aAAa,CAMzB"}

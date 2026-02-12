@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: fleet_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fleet-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: admin
+      DATABASE_PASSWORD: password
+      DATABASE_NAME: fleet_db
+    depends_on:
+      - postgres
+    networks:
+      - fleet-network
+
+networks:
+  fleet-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
